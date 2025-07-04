@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  whatsapp-bot:
+    image: test
+    container_name: whatsapp-bot
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./config.yaml:/app/config.yaml:ro
+      - ./.wwebjs_auth:/home/node/.wwebjs_auth
+    environment:
+      - TZ=Asia/Jakarta
