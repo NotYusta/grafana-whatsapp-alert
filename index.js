@@ -60,10 +60,6 @@ client.on("ready", async () => {
   }
 });
 
-client.on("message", (msg) => {
-  console.log(`[${msg.from}] ${msg.body}`);
-});
-
 // Format Grafana alert to WhatsApp message
 function formatGrafanaAlert(alert) {
   const labels = alert.labels || {};
@@ -140,8 +136,6 @@ app.post("/webhook/grafana", async (req, res) => {
     res.status(500).send("❌ Failed to send alert");
   }
 });
-
-app.get("/", (req, res) => res.send("🟢 WhatsApp Bot is running"));
 
 app.listen(port, host, () =>
   console.log(`🚀 Express server listening at http://${host}:${port}`)
