@@ -31,7 +31,7 @@ COPY package*.json ./
 RUN npm install --omit=dev
 
 # Copy the full bot source code
-COPY . .
+COPY ./src ./src
 
 # Puppeteer expects this env
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
