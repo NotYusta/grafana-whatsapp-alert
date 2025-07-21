@@ -37,4 +37,4 @@ COPY ./src ./src
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
 # Default start command
-CMD ["node", "index.js"]
+CMD ["node", "."]
